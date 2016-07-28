@@ -42,7 +42,13 @@ let
     ${pkgs.pythonPackages.docker_compose}/bin/docker-compose -p ${config.name} -f ${compose} run $1
   '';
 
+  attachEnv = pkgs.writeScriptBin "${config.name}-attach" ''
+    #!${pkgs.bash}/bin/bash
+
+    ${pkgs.docker}/bin/docker attach ${config.name}_$1_1
+  '';
+
 in pkgs.buildEnv {
   name = "nix-sandbox-${config.name}";
-  paths = [startEnv stopEnv runEnv];
+  paths = [startEnv stopEnv runEnv attachEnv];
 }

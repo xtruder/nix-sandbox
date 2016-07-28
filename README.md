@@ -16,7 +16,8 @@ Sandbox that uses [nix](https://nixos.org/nix) as package manager and
 
     $ <name>-start
     $ <name>-stop
-    $ <name>-attach <container_name>
+    $ <name>-attach CONTAINER_NAME
+    $ <name>-run CONTAINER_NAME [COMMAND]
 
 ## Configuration examples
 
