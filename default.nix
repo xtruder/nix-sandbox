@@ -36,7 +36,7 @@ let
     ${config.postStop}
   '';
 
-  runEnv = pkgs.writeScriptBin "${config.name}-attach" ''
+  runEnv = pkgs.writeScriptBin "${config.name}-run" ''
     #!${pkgs.bash}/bin/bash
 
     ${pkgs.pythonPackages.docker_compose}/bin/docker-compose -p ${config.name} -f ${compose} run $1
