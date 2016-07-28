@@ -11,6 +11,8 @@ let
     paths = with pkgs; [
       coreutils
       utillinux
+      procps
+      inetutils
       stdenv
       strace
       gnugrep
