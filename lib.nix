@@ -28,7 +28,7 @@ rec {
     stdin_open = container.interactive;
     restart = container.restart;
     environment = container.env;
-    user = "${container.uid}:${container.gid}";
+    user = optionalString (container.uid != null && container.gid != null) "${container.uid}:${container.gid}";
     links = container.links;
     net = container.net;
     dns = container.dns;
