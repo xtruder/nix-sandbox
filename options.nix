@@ -19,6 +19,12 @@ let
         description = "Name of the container";
       };
 
+      envName = mkOption {
+        type = types.str;
+        default = globalConfig.name;
+        description = "Name of the environment";
+      };
+
       image = mkOption {
         type = types.str;
         default = globalConfig.defaultImage;
