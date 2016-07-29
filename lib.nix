@@ -36,8 +36,9 @@ rec {
     expose = container.expose;
     ports = container.ports;
     privileged = container.privileged;
-    capAdd = container.capAdd;
-    capDrop = container.capDrop;
+    cap_add = container.capAdd;
+    cap_drop = container.capDrop;
+    working_dir = container.workdir;
   });
 
   mkCompose = config: mapAttrs' (name: container:
