@@ -25,7 +25,7 @@ let
     #!${pkgs.bash}/bin/bash
 
     ${config.preStart}
-    ${pkgs.pythonPackages.docker_compose}/bin/docker-compose -p ${config.name} -f ${compose} up -d
+    ${pkgs.pythonPackages.docker_compose}/bin/docker-compose -p ${config.name} -f ${compose} up -d $@
     ${config.postStart}
   '';
 
