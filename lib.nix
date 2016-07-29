@@ -18,7 +18,7 @@ rec {
           buildCommand = "perl ${pkgs.pathsFromGraph} closure-* > $out";
         })));
 
-    storeVolumes = map (v: "${v}:${v}") storePaths;
+    storeVolumes = map (v: "${v}:${v}:ro") storePaths;
   in (filterAttrs (n: v: v != null && v != []) {
     image = container.image;
     volumes = storeVolumes ++ mounts;
