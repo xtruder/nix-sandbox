@@ -39,6 +39,7 @@ rec {
     cap_add = container.capAdd;
     cap_drop = container.capDrop;
     working_dir = container.workdir;
+    stop_signal = container.stop_signal;
   });
 
   mkCompose = config: mapAttrs' (name: container:
