@@ -162,6 +162,12 @@ let
         description = "Set working directory";
         default = null;
       };
+
+      stop_signal = mkOption {
+        type = types.nullOr types.str;
+        description = "Set stop signal";
+        default = null;
+      };
     };
 
     config = {
